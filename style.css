@@ -1,0 +1,164 @@
+/* General body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    width: 100vw; /* Full viewport width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Main menu and game container styling */
+.game-container, .main-menu {
+    text-align: center;
+    width: 100%;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main-menu img {
+    width: 500px;
+    height: auto;
+}
+
+.main-menu button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #6200ea;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+.main-menu button:hover {
+    background-color: #3700b3;
+}
+
+.game-container {
+    display: none;
+}
+
+.base-container {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 20px auto 0 auto;
+}
+
+/* Base image and layering */
+.base-container img {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* Controls section */
+.controls {
+    margin-top:20px;
+    display: flex;
+    flex-direction: column; /* Stack each category on a new line */
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    flex-wrap: wrap;
+}
+
+/* Category styling template */
+.category {
+    margin: 10px;
+}
+
+/* Category group styling */
+.category-group {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column to create a line break */
+    align-items: center;
+    margin-bottom: 20px; /* Space between each group */
+}
+
+.category-group h3 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Z-index layering for each category */
+.Base-image { z-index: 1; } /* Base */
+.bottomunderwear { z-index: 2; }
+.topunderwear { z-index: 3; }
+.boxers { z-index: 4; }
+.sweatshirt { z-index: 5; }
+.socks { z-index: 6; }
+.shoes { z-index: 7; }
+.pants { z-index: 8; }
+.skirt { z-index: 9; }
+.top { z-index: 10; }
+.dress { z-index: 11; }
+.jacket { z-index: 12;}
+.accessories { z-index: 13; }
+.hat { z-index: 14; }
+
+/* Controls button styling */
+.controls img {
+    cursor: pointer;
+    width: 50px;
+    height: auto;
+    margin: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.controls img:hover {
+    border-color: #6200ea;
+}
+
+/* Responsive adjustments for .base-container on mobile, tablet, and desktop screens */
+@media (max-width: 600px) {
+    .base-container {
+        width: 90vw;
+        height: auto; /* Allow height to adjust dynamically based on width */
+    }
+    .main-menu img {
+        width: 180vw; /* Scale main menu image down for mobile */
+    }
+    .main-menu button {
+        font-size: 16px; /* Adjust button size for smaller screens */
+        width: 180vw; /* Ensure buttons fit on smaller screens */
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .base-container {
+        width: 70vw;
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .base-container {
+        width: 50vw;
+        max-width: 500px;
+        height: auto;
+    }
+}
+
+/* Additional margin to prevent overlap with controls */
+.base-container {
+    margin-bottom: 500px;
+}
