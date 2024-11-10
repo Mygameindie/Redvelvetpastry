@@ -70,18 +70,18 @@ body {
 
 /* Controls section */
 .controls {
-    margin-top:20px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column; /* Stack each category on a new line */
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 100%;
     flex-wrap: wrap;
 }
 
 /* Category styling template */
 .category {
-    margin: 10px;
+    margin: 100px;
 }
 
 /* Category group styling */
@@ -104,12 +104,13 @@ body {
 .topunderwear { z-index: 3; }
 .boxers { z-index: 4; }
 .sweatshirt { z-index: 5; }
+.socks { z-index: 6; }
 .shoes { z-index: 7; }
 .pants { z-index: 8; }
 .skirt { z-index: 9; }
 .top { z-index: 10; }
 .dress { z-index: 11; }
-.jacket { z-index: 12;}
+.jacket { z-index: 12; }
 .accessories { z-index: 13; }
 .hat { z-index: 14; }
 
@@ -127,37 +128,43 @@ body {
     border-color: #6200ea;
 }
 
-/* Responsive adjustments for .base-container on mobile, tablet, and desktop screens */
+/* Responsive styling for smaller screens */
 @media (max-width: 600px) {
     .base-container {
-        width: 90vw;
-        height: auto; /* Allow height to adjust dynamically based on width */
+        display: flex;
+        flex-wrap: nowrap; /* Ensure items are side-by-side */
+        justify-content: space-between;
+        width: 100%; /* Adjust width to take up full screen */
+        height: auto;
     }
+
+    .base-container img {
+        flex: 1 1 auto; /* Make images share available space */
+        width: 30%; /* Display three images side-by-side */
+        height: auto;
+    }
+
+    .controls img {
+        width: 30px; /* Resize control buttons for smaller screens */
+        height: auto;
+    }
+
     .main-menu img {
-        width: 180vw; /* Scale main menu image down for mobile */
+        width: 100%; /* Adjust main menu images */
+        height: auto;
     }
+
     .main-menu button {
-        font-size: 16px; /* Adjust button size for smaller screens */
-        width: 180vw; /* Ensure buttons fit on smaller screens */
+        width: 100%; /* Scale buttons for smaller screens */
+        font-size: 16px; /* Reduce font size */
     }
-}
 
-@media (min-width: 600px) and (max-width: 1024px) {
-    .base-container {
-        width: 70vw;
-        height: auto;
+    .controls {
+        flex-direction: row; /* Display controls in a row */
+        flex-wrap: wrap;
     }
-}
 
-@media (min-width: 1024px) {
-    .base-container {
-        width: 50vw;
-        max-width: 500px;
-        height: auto;
+    .category-group {
+        margin-bottom: auto; /* Reduce space between categories */
     }
-}
-
-/* Additional margin to prevent overlap with controls */
-.base-container {
-    margin-bottom: 500px;
 }

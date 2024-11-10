@@ -1,17 +1,18 @@
 // Array of JSON file paths
 const jsonFiles = [
-    'bottomunderwear1.json', 'bottomunderwear2.json', 
-    'topunderwear1.json', 'topunderwear2.json', 
-    'boxers1.json', 'boxers2.json',  
-    'shoes1.json', 'shoes2.json', 
-    'top1.json', 'top2.json', 
-    'dress1.json', 'dress2.json', 
-    'pants1.json', 'pants2.json', 
-    'skirt1.json', 'skirt2.json', 
-    'jacket1.json', 'jacket2.json', 
-    'accessories1.json', 'accessories2.json',
-    'sweatshirt1.json', 'sweatshirt2.json', 
-    'hat1.json', 'hat2.json',  // New hat categories
+    'bottomunderwear1.json', 'bottomunderwear2.json', 'bottomunderwear3.json', 
+    'topunderwear1.json', 'topunderwear2.json', 'topunderwear3.json', 
+    'boxers1.json', 'boxers2.json', 'boxers3.json',
+    'socks1.json', 'socks2.json', 'socks3.json', 
+    'shoes1.json', 'shoes2.json', 'shoes3.json', 
+    'top1.json', 'top2.json', 'top3.json', 
+    'dress1.json', 'dress2.json', 'dress3.json', 
+    'pants1.json', 'pants2.json', 'pants3.json', 
+    'skirt1.json', 'skirt2.json', 'skirt3.json', 
+    'jacket1.json', 'jacket2.json', 'jacket3.json', 
+    'accessories1.json', 'accessories2.json', 'accessories3.json',
+    'sweatshirt1.json', 'sweatshirt2.json', 'sweatshirt3.json',
+    'hat1.json', 'hat2.json', 'hat3.json' // New hat categories
 ];
 
 // Load each JSON file
@@ -108,7 +109,30 @@ function enterGame() {
     document.querySelector('.game-container').style.display = 'block';
 }
 
-// Initialize items on page load
+// Adjust canvas layout dynamically for responsive design on smaller screens
+function adjustCanvasLayout() {
+    const baseContainer = document.querySelector('.base-container');
+    const controlsContainer = document.querySelector('.controls');
+
+    const screenWidth = window.innerWidth;
+
+    // Adjust for smaller screens to show three characters side-by-side
+    if (screenWidth <= 600) {
+        baseContainer.style.display = 'flex';
+        baseContainer.style.flexWrap = 'nowrap'; // Ensure side-by-side layout
+        baseContainer.style.justifyContent = 'space-between'; // Distribute evenly
+    } else {
+        baseContainer.style.display = 'block';
+        baseContainer.style.width = '500px';
+        baseContainer.style.height = '400px';
+        controlsContainer.style.marginTop = 'auto';
+    }
+}
+
+// Apply layout adjustment on load and resize
 window.onload = () => {
     loadItemsInBatches();
+    adjustCanvasLayout();
 };
+
+window.addEventListener('resize', adjustCanvasLayout);
