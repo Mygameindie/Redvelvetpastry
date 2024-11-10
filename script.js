@@ -2,8 +2,7 @@
 const jsonFiles = [
     'bottomunderwear1.json', 'bottomunderwear2.json', 
     'topunderwear1.json', 'topunderwear2.json', 
-    'boxers1.json', 'boxers2.json', 
-    'socks1.json', 'socks2.json', 
+    'boxers1.json', 'boxers2.json',  
     'shoes1.json', 'shoes2.json', 
     'top1.json', 'top2.json', 
     'dress1.json', 'dress2.json', 
