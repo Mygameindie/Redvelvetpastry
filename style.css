@@ -138,6 +138,7 @@ body {
     }
 
     .base-container img {
+    position: absolute; /* Ensures Z-index applies */
         flex: 1 1 auto; /* Make images share available space */
         width: 30%; /* Display three images side-by-side */
         height: auto;
